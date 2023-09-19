@@ -1,0 +1,41 @@
+Bien sûr, je serai ravi de t'aider avec la multiplication en utilisant ReactJS et les hooks ! Pour créer un hook qui te permettra de modifier et de changer la valeur dans l'input secondaire, tu peux suivre ces étapes :
+
+1. Tout d'abord, assure-toi d'avoir créé un composant fonctionnel dans ReactJS.
+
+2. À l'intérieur de ton composant, utilise le hook `useState` pour créer un état pour la valeur de l'input secondaire. Tu peux utiliser la syntaxe suivante :
+
+```javascript
+import React, { useState } from 'react';
+
+function TonComposant() {
+  const [valeurInput, setValeurInput] = useState('');
+  
+  // ...
+}
+```
+
+3. Crée un gestionnaire d'événements qui mettra à jour la valeur de l'input secondaire. Tu peux utiliser la fonction `setValeurInput` fournie par le hook `useState` pour mettre à jour la valeur. Voici un exemple de gestionnaire d'événements pour mettre à jour la valeur à chaque changement dans l'input :
+
+```javascript
+function handleChange(event) {
+  setValeurInput(event.target.value);
+}
+```
+
+4. Maintenant, tu peux utiliser cet état `valeurInput` dans ton input secondaire en utilisant la propriété `value`. Assure-toi également d'ajouter l'événement `onChange` pour appeler le gestionnaire d'événements `handleChange` :
+
+```javascript
+return (
+  <div>
+    <input 
+      type="text"
+      value={valeurInput}
+      onChange={handleChange}
+    />
+  </div>
+);
+```
+
+Maintenant, chaque fois que tu modifies la valeur de l'input secondaire, l'état `valeurInput` sera mis à jour automatiquement. Tu peux utiliser cette valeur pour effectuer la multiplication ou faire d'autres opérations souhaitées.
+
+N'oublie pas d'adapter ces étapes à ton contexte spécifique. J'espère que cela t'aide à atteindre ton objectif ! Si tu as d'autres questions, n'hésite pas à demander.

@@ -1,0 +1,37 @@
+Pour créer une fonction avec une expiration de 20 minutes en PHP, vous pouvez utiliser le concept de timestamps (horodatages) pour vérifier si le temps actuel est supérieur à l'heure d'expiration. Voici un exemple de fonction qui peut être utilisée pour vérifier l'expiration :
+
+```php
+function isExpired($startTime, $expirationMinutes = 20) {
+    $expirationTime = strtotime($startTime . ' +' . $expirationMinutes . ' minutes');
+    $currentTime = time();
+    
+    if ($currentTime > $expirationTime) {
+        return true; // La fonction a expiré
+    } else {
+        return false; // La fonction est encore valide
+    }
+}
+```
+
+Explications du code :
+- La fonction `isExpired` prend deux paramètres : `$startTime`, qui est l'heure de début de la fonction, et `$expirationMinutes`, qui est la durée d'expiration en minutes (par défaut, 20 minutes).
+- `strtotime` est utilisé pour convertir la chaîne de l'heure de début en un timestamp.
+- `strtotime($startTime . ' +' . $expirationMinutes . ' minutes')` calcule l'heure d'expiration en ajoutant la durée d'expiration en minutes à l'heure de début.
+- `time()` est utilisé pour obtenir le timestamp actuel.
+- La condition `if ($currentTime > $expirationTime)` compare le timestamp actuel avec l'heure d'expiration.
+- Si le timestamp actuel est supérieur à l'heure d'expiration, la fonction retourne `true`, indiquant que la fonction a expiré. Sinon, la fonction retourne `false`, indiquant que la fonction est encore valide.
+
+Voici un exemple d'utilisation de la fonction :
+
+```php
+$startTime = '2023-07-08 10:00:00'; // Heure de début de la fonction (peut être obtenue dynamiquement)
+$expirationMinutes = 20; // Durée d'expiration en minutes
+
+if (isExpired($startTime, $expirationMinutes)) {
+    echo 'La fonction a expiré.';
+} else {
+    echo 'La fonction est encore valide.';
+}
+```
+
+Vous pouvez personnaliser le code en fonction de vos besoins spécifiques, tels que la façon d'obtenir l'heure de début de la fonction ou la façon dont vous souhaitez gérer le message de validité ou d'expiration.

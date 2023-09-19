@@ -1,0 +1,66 @@
+body{
+    background: #eef;
+}
+#link a{
+    text-decoration: none;
+}
+#link a:hover{
+    text-decoration: underline;
+}
+#card{
+    box-shadow: 0 8px 20px 0 rgb(0,0,0,0.6);
+    background: #fff;
+}
+#secttion{
+    position: absolute;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    background: #eef;
+    z-index: 999;
+}
+.point div{
+    background: none;
+    border-radius: 100%;
+    padding: 5px;
+    margin-left: 5px;
+    animation: charge 3s linear infinite;
+}
+@keyframes charge{
+    0%{
+        background: rgb(41, 68, 246);
+    }
+    10%{
+        background: rgb(41, 68, 246);
+    }
+    20%{
+        background: rgb(41, 68, 246);
+    }
+}
+.point:nth-child(1) div{
+    animation-delay: 0.1s;
+}
+.point:nth-child(2) div{
+    animation-delay: 0.2s;
+}
+.point:nth-child(3) div{
+    animation-delay: 0.3s;
+}
+.point:nth-child(4) div{
+    animation-delay: 0.4s;
+}
+.point:nth-child(5) div{
+    animation-delay: 0.5s;
+}
+.fondu-out{
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+}
+#logo{
+    width:60px;
+    height:60px;
+    border-radius:100px 100px 0px 100px;
+    margin-left: -30px;
+}
